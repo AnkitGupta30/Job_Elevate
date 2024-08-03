@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extends: true }));
 app.use(cookieParser());
 const options = {
-  origin: "http://localhost:5173",
+  origin: "https://job-elevate-frontend.onrender.com",
   credentials: true,
 };
 app.use(cors(options));
