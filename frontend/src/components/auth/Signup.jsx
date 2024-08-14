@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../shared/Navbar";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
@@ -81,7 +81,7 @@ const Signup = () => {
             <Label>Full Name</Label>
             <Input
               type="text"
-              placeholder="ankit"
+              placeholder="User Name"
               value={input.fullname}
               name="fullname"
               onChange={changeEventHandler}
@@ -91,7 +91,7 @@ const Signup = () => {
             <Label>Email</Label>
             <Input
               type="email"
-              placeholder="ankit@gmail.com"
+              placeholder="user@gmail.com"
               value={input.email}
               name="email"
               onChange={changeEventHandler}
@@ -101,7 +101,7 @@ const Signup = () => {
             <Label>Phone Number</Label>
             <Input
               type="text"
-              placeholder="9090909090"
+              placeholder="phoneNumber"
               value={input.phoneNumber}
               name="phoneNumber"
               onChange={changeEventHandler}
@@ -111,7 +111,7 @@ const Signup = () => {
             <Label>Password</Label>
             <Input
               type="password"
-              placeholder="ankit"
+              placeholder="User Password"
               value={input.password}
               name="password"
               onChange={changeEventHandler}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Button } from "./ui/button";
 import { Search } from "lucide-react";
 import { useDispatch } from "react-redux";
@@ -21,7 +21,7 @@ const HeroSection = () => {
         <span className="bg-gray-200 rounded-full px-4 py-2 text-[#F83002] font-medium mx-auto">
           No. 1 Job Hunt Website
         </span>
-        <h1 className="text-5xl font-bold">
+        <h1 className="lg:text-5xl font-bold text-3xl">
           Search, Apply & <br />
           Get Your <span className="text-[#6A38C2]">Dream Jobs</span>
         </h1>

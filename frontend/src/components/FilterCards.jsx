@@ -35,12 +35,12 @@ const FilterCards = () => {
       <hr className="mt-3" />
       <RadioGroup onValueChange={changeHandler} value={selectedValue}>
         {filterData.map((data, index) => (
-          <div>
+          <div key={index}>
             <h1 className="font-bold text-lg">{data.filterType}</h1>
             {data.array.map((item, idx) => {
               const itemId = `r${index} - ${idx}`;
               return (
-                <div className="flex items-center space-x-2 my-2">
+                <div key={index} className="flex items-center space-x-2 my-2">
                   <RadioGroupItem value={item} id={itemId} />
                   <Label htmlFor={itemId}>{item}</Label>
                 </div>

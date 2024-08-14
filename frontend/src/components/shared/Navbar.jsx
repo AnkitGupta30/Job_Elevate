@@ -1,9 +1,8 @@
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
 import { Button } from "../ui/button";
 import { Avatar, AvatarImage } from "../ui/avatar";
-import { LogOut, User2 } from "lucide-react";
+import { Joystick, LogOut, User2, User2Icon } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { toast } from "sonner";
@@ -25,13 +24,13 @@ const Navbar = () => {
         toast.success(res.data.message);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error(error.response.data.message);
     }
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-white sticky top-0 left-0 right-0 z-10">
       <div className="flex justify-between items-center mx-auto lg:max-w-5xl h-16 px-5 lg:px-0">
         <div>
           <Link to={"/"}>
@@ -59,10 +58,14 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link to={"/jobs"}>Jobs</Link>
+                  <Link to={"/jobs"} className="hidden lg:block">
+                    Jobs
+                  </Link>
                 </li>
                 <li>
-                  <Link to={"/browse"}>Browse</Link>
+                  <Link to={"/browse"} className="hidden lg:block">
+                    Browse
+                  </Link>
                 </li>
               </>
             )}
@@ -113,6 +116,32 @@ const Navbar = () => {
                       <Button onClick={logoutHandler} variant="link">
                         Logout
                       </Button>
+                    </div>
+                    <div className="flex w-fit items-center gap-6 cursor-pointer my-2.5">
+                      {user?.role === "student" && (
+                        <>
+                          <Joystick />
+                          <Link
+                            to={"/jobs"}
+                            className="font-semibold text-black"
+                          >
+                            Jobs
+                          </Link>
+                        </>
+                      )}
+                    </div>
+                    <div className="flex w-fit items-center gap-6 cursor-pointer">
+                      {user?.role === "student" && (
+                        <>
+                          <User2Icon />
+                          <Link
+                            to={"/browse"}
+                            className="font-semibold text-black"
+                          >
+                            Browse
+                          </Link>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>

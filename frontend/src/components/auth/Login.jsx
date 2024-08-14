@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../shared/Navbar";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
@@ -68,7 +68,7 @@ const Login = () => {
             <Label>Email</Label>
             <Input
               type="email"
-              placeholder="ankit@gmail.com"
+              placeholder="user@gmail.com"
               value={input.email}
               name="email"
               onChange={changeEventHandler}
@@ -78,7 +78,7 @@ const Login = () => {
             <Label>Password</Label>
             <Input
               type="password"
-              placeholder="ankit"
+              placeholder="User Password"
               value={input.password}
               name="password"
               onChange={changeEventHandler}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./shared/Navbar";
 import FilterCards from "./FilterCards";
 import Job from "./Job";
@@ -37,7 +37,7 @@ const Jobs = () => {
     <div>
       <Navbar />
       <div className="max-w-5xl mx-auto mt-5">
-        <div className="flex gap-5">
+        <div className="flex gap-5 flex-col lg:flex-row">
           <div className="w-20%">
             <FilterCards />
           </div>
